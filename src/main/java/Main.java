@@ -5,7 +5,7 @@ public class Main {
     private static final Marker KIJELENT = MarkerManager.getMarker("KIJELENT");
     private static final Marker KERELEM = MarkerManager.getMarker("KÉRELEM");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int iterationCount = 2;
         if(args.length == 1){
             iterationCount = Integer.parseInt(args[0]);
@@ -19,6 +19,7 @@ public class Main {
             logger.error(KERELEM, "Szabad-e locsolni?");
 
             ThreadContext.clearAll();
+            Thread.sleep(1000);
         }
     }
 }
